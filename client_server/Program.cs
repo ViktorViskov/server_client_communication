@@ -28,96 +28,107 @@ namespace client_server
             Console.WriteLine("Press key 1 to open client side");
             Console.WriteLine("Press key 2 to open server side");
 
-
-            // user action
-            switch (Console.ReadKey(true).Key)
+            // catching errors
+            try
             {
-                // 
-                // client side
-                // 
+                // user action
+                switch (Console.ReadKey(true).Key)
+                {
+                    // 
+                    // client side
+                    // 
 
-                case ConsoleKey.D1:
-                    // user input
-                    Console.WriteLine("Input data for connection");
-                    Console.Write("IP address: ");
-                    string ip_addr = Console.ReadLine();
-                    Console.Write("Port: ");
-                    port = int.Parse(Console.ReadLine());
-                    Console.Write("Message: ");
-                    message = Console.ReadLine();
+                    case ConsoleKey.D1:
+                        // user input
+                        Console.WriteLine("Input data for connection");
+                        Console.Write("IP address: ");
+                        string ip_addr = Console.ReadLine();
+                        Console.Write("Port: ");
+                        port = int.Parse(Console.ReadLine());
+                        Console.Write("Message: ");
+                        message = Console.ReadLine();
 
-                    // variables
-                    ip = IPAddress.Parse(ip_addr);
-                    endPoint = new IPEndPoint(ip, port);
+                        // variables
+                        ip = IPAddress.Parse(ip_addr);
+                        endPoint = new IPEndPoint(ip, port);
 
-                    // message
-                    buffer = Encoding.UTF8.GetBytes(message);
-                    answer_buffer = new byte[256];
+                        // message
+                        buffer = Encoding.UTF8.GetBytes(message);
+                        answer_buffer = new byte[256];
 
-                    // open client socket
-                    client = new TcpClient();
+                        // open client socket
+                        client = new TcpClient();
 
-                    // open conntecion
-                    client.Connect(endPoint);
+                        // open conntecion
+                        client.Connect(endPoint);
 
-                    // data stream
-                    stream = client.GetStream();
-                    stream.Write(buffer, 0, buffer.Length);
+                        // data stream
+                        stream = client.GetStream();
+                        stream.Write(buffer, 0, buffer.Length);
 
-                    // get data from server
-                    numberOfBytesRead = stream.Read(answer_buffer, 0, 256);
-                    answer = Encoding.UTF8.GetString(answer_buffer, 0, numberOfBytesRead);
-                    Console.WriteLine(answer);
+                        // get data from server
+                        numberOfBytesRead = stream.Read(answer_buffer, 0, 256);
+                        answer = Encoding.UTF8.GetString(answer_buffer, 0, numberOfBytesRead);
+                        Console.WriteLine(answer);
 
-                    // clouse stream
-                    client.Close();
-                    break;
+                        // clouse stream
+                        client.Close();
+                        break;
 
-                // 
-                // server side
-                // 
-                case ConsoleKey.D2:
+                    // 
+                    // server side
+                    // 
+                    case ConsoleKey.D2:
 
-                    // variables
-                    port = 13356;
-                    ip = IPAddress.Any;
-                    endPoint = new IPEndPoint(ip, port);
-                    buffer = new byte[256];
+                        // variables
+                        port = 13356;
+                        ip = IPAddress.Any;
+                        endPoint = new IPEndPoint(ip, port);
+                        buffer = new byte[256];
 
-                    // server listener
-                    listener = new TcpListener(endPoint);
-                    listener.Start();
+                        // server listener
+                        listener = new TcpListener(endPoint);
+                        listener.Start();
 
-                    // print status message
-                    Console.WriteLine($"Local machine: {Dns.GetHostEntry(Dns.GetHostName()).AddressList[1].ToString()}");
-                    Console.WriteLine($"Server ip address: {listener.LocalEndpoint.ToString()}");
-                    Console.WriteLine($"Server port: {port}");
-                    Console.WriteLine("Awaiting clients");
+                        // print status message
+                        Console.WriteLine($"Local machine: {Dns.GetHostEntry(Dns.GetHostName()).AddressList[1].ToString()}");
+                        Console.WriteLine($"Server ip address: {listener.LocalEndpoint.ToString()}");
+                        Console.WriteLine($"Server port: {port}");
+                        Console.WriteLine("Awaiting clients");
 
-                    // awaiting for connections
-                    client = listener.AcceptTcpClient();
+                        // awaiting for connections
+                        client = listener.AcceptTcpClient();
 
-                    // creating stream betwen client server
-                    stream = client.GetStream();
+                        // creating stream betwen client server
+                        stream = client.GetStream();
 
-                    // load data from client
-                    numberOfBytesRead = stream.Read(buffer, 0, 256);
+                        // load data from client
+                        numberOfBytesRead = stream.Read(buffer, 0, 256);
 
-                    // convert to string message
-                    message = Encoding.UTF8.GetString(buffer, 0, numberOfBytesRead);
+                        // convert to string message
+                        message = Encoding.UTF8.GetString(buffer, 0, numberOfBytesRead);
 
-                    // print message
-                    Console.WriteLine($"{client.Client.RemoteEndPoint.ToString().Split(':')[0]} send: {message}");
+                        // print message
+                        Console.WriteLine($"{client.Client.RemoteEndPoint.ToString().Split(':')[0]} send: {message}");
 
-                    // send answer
-                    answer = $"Message '{message}' was received";
-                    buffer = Encoding.UTF8.GetBytes(answer);
-                    stream.Write(buffer, 0, buffer.Length);
+                        // send answer
+                        answer = $"Message '{message}' was received";
+                        buffer = Encoding.UTF8.GetBytes(answer);
+                        stream.Write(buffer, 0, buffer.Length);
 
-                    // close conection
-                    client.Close();
-                    break;
+                        // close conection
+                        client.Close();
+                        break;
+                }
+
             }
+
+            catch
+            {
+                Console.WriteLine("Error. Check inputed data and try again");
+            }
+
+
 
         }
     }
