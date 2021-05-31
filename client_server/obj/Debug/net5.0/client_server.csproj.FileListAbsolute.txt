@@ -1,0 +1,16 @@
+C:\Users\vikt3586\Documents\OOP\simpel_call_response\client_server\bin\Debug\net5.0\client_server.exe
+C:\Users\vikt3586\Documents\OOP\simpel_call_response\client_server\bin\Debug\net5.0\client_server.deps.json
+C:\Users\vikt3586\Documents\OOP\simpel_call_response\client_server\bin\Debug\net5.0\client_server.runtimeconfig.json
+C:\Users\vikt3586\Documents\OOP\simpel_call_response\client_server\bin\Debug\net5.0\client_server.runtimeconfig.dev.json
+C:\Users\vikt3586\Documents\OOP\simpel_call_response\client_server\bin\Debug\net5.0\client_server.dll
+C:\Users\vikt3586\Documents\OOP\simpel_call_response\client_server\bin\Debug\net5.0\ref\client_server.dll
+C:\Users\vikt3586\Documents\OOP\simpel_call_response\client_server\bin\Debug\net5.0\client_server.pdb
+C:\Users\vikt3586\Documents\OOP\simpel_call_response\client_server\obj\Debug\net5.0\client_server.csprojAssemblyReference.cache
+C:\Users\vikt3586\Documents\OOP\simpel_call_response\client_server\obj\Debug\net5.0\client_server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vikt3586\Documents\OOP\simpel_call_response\client_server\obj\Debug\net5.0\client_server.AssemblyInfoInputs.cache
+C:\Users\vikt3586\Documents\OOP\simpel_call_response\client_server\obj\Debug\net5.0\client_server.AssemblyInfo.cs
+C:\Users\vikt3586\Documents\OOP\simpel_call_response\client_server\obj\Debug\net5.0\client_server.csproj.CoreCompileInputs.cache
+C:\Users\vikt3586\Documents\OOP\simpel_call_response\client_server\obj\Debug\net5.0\client_server.dll
+C:\Users\vikt3586\Documents\OOP\simpel_call_response\client_server\obj\Debug\net5.0\ref\client_server.dll
+C:\Users\vikt3586\Documents\OOP\simpel_call_response\client_server\obj\Debug\net5.0\client_server.pdb
+C:\Users\vikt3586\Documents\OOP\simpel_call_response\client_server\obj\Debug\net5.0\client_server.genruntimeconfig.cache

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vikt3586\\Documents\\OOP\\simpel_call_response\\client\\client.csproj": {}
+    "C:\\Users\\vikt3586\\Documents\\OOP\\simpel_call_response\\client_server\\client_server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vikt3586\\Documents\\OOP\\simpel_call_response\\client\\client.csproj": {
+    "C:\\Users\\vikt3586\\Documents\\OOP\\simpel_call_response\\client_server\\client_server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vikt3586\\Documents\\OOP\\simpel_call_response\\client\\client.csproj",
-        "projectName": "client",
-        "projectPath": "C:\\Users\\vikt3586\\Documents\\OOP\\simpel_call_response\\client\\client.csproj",
+        "projectUniqueName": "C:\\Users\\vikt3586\\Documents\\OOP\\simpel_call_response\\client_server\\client_server.csproj",
+        "projectName": "client_server",
+        "projectPath": "C:\\Users\\vikt3586\\Documents\\OOP\\simpel_call_response\\client_server\\client_server.csproj",
         "packagesPath": "C:\\Users\\vikt3586\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vikt3586\\Documents\\OOP\\simpel_call_response\\client\\obj\\",
+        "outputPath": "C:\\Users\\vikt3586\\Documents\\OOP\\simpel_call_response\\client_server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vikt3586\\AppData\\Roaming\\NuGet\\NuGet.Config",
